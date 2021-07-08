@@ -11,4 +11,5 @@ local params = inv.parameters.velero;
 }
 + (import 'velero-secret.libsonnet')
 + (import 'velero-backupstoragelocation.libsonnet')
++ (import 'velero-volumesnapshotlocation.libsonnet')
 + (import 'velero-schedule.libsonnet')

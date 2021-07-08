@@ -4,7 +4,10 @@ parameters:
     namespace: syn-velero
     charts:
       velero: 2.23.3
-    helm_values: {}
+    helm_values: 
+      configuration:
+        provider: aws
+
     schedules: []
     # - name: full-backup
     #   spec:
@@ -20,6 +23,14 @@ parameters:
     #    credential:
     #      name: secret-name
     #      key: key-in-secret
+    #    config:
+    #      region: 'us-west-2'
+    #      profile: 'default'
+
+    volumesnapshotlocations: []
+    #- name: default
+    #  spec:
+    #    provider: aws
     #    config:
     #      region: 'us-west-2'
     #      profile: 'default'
