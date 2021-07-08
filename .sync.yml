@@ -1,0 +1,7 @@
+:global:
+  componentName: velero
+  githubUrl: https://github.com/projectsyn/component-velero
+
+docs/antora.yml:
+  name: velero
+  title: velero
