@@ -12,9 +12,9 @@ local params = inv.parameters.velero;
       kind: 'Schedule',
       metadata: {
         name: schedule.name,
-        namespace: param.namespace,
+        namespace: params.namespace,
       },
       spec: schedule.spec
   }
-  for schedule in std.objectFields(params.schedules)
+  for schedule in params.schedules
 }

@@ -12,9 +12,9 @@ local params = inv.parameters.velero;
       kind: 'BackupStorageLocation',
       metadata: {
         name: backupstoragelocation.name,
-        namespace: param.namespace,
+        namespace: params.namespace,
       },
       spec: backupstoragelocation.spec
   }
-  for backupstoragelocation in std.objectFields(params.backupstoragelocations)
+  for backupstoragelocation in params.backupstoragelocations
 }

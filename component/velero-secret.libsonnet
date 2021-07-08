@@ -17,6 +17,6 @@ local backupstoragelocationSecret(secret) = kube.Secret(secret) {
 
 // Define outputs below
 {
-    ['backupstoragelocation-secret-' + secret]: backupstoragelocation(params.secrets[secret])
+    ['backupstoragelocation-secret-' + secret]: backupstoragelocationSecret(params.secrets[secret])
     for secret in std.objectFields(params.secrets)
 }

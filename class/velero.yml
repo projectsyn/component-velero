@@ -2,7 +2,7 @@ parameters:
   kapitan:
     dependencies:
       - type: helm
-        source: https://github.com/vmware-tanzu/helm-charts
+        source: https://vmware-tanzu.github.io/helm-charts
         chart_name: velero
         version: ${velero:charts:velero}
         output_path: dependencies/velero/helmcharts/velero
