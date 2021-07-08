@@ -1,0 +1,4 @@
+parameters:
+  velero:
+    =_metadata: {}
+    namespace: syn-velero
