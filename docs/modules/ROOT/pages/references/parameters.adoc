@@ -10,6 +10,13 @@ default:: `syn-velero`
 
 The namespace in which to deploy this component.
 
+== `helm_values`
+
+[horizontal]
+type:: dict
+default:: see `defaults.yml`
+
+All helm_values are passed to the helm chart.
 
 == Example
 

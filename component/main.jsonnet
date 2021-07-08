@@ -7,4 +7,8 @@ local params = inv.parameters.velero;
 
 // Define outputs below
 {
+  '00_namespace': kube.Namespace(params.namespace),
 }
++ (import 'velero-secret.libsonnet')
++ (import 'velero-backupstoragelocation.libsonnet')
++ (import 'velero-schedule.libsonnet')

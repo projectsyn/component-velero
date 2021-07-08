@@ -2,3 +2,30 @@ parameters:
   velero:
     =_metadata: {}
     namespace: syn-velero
+    charts:
+      velero: 2.23.3
+    helm_values: {}
+    schedules: []
+    # - name: full-backup
+    #   spec:
+    #    schedule: '0 7 * * *'
+    #    ttl: 24h0m0s
+      
+    backupstoragelocations: []
+    #- name: default
+    #  spec:
+    #    provider: aws
+    #    objectStorage:
+    #      bucket: myBucket
+    #    credential:
+    #      name: secret-name
+    #      key: key-in-secret
+    #    config:
+    #      region: 'us-west-2'
+    #      profile: 'default'
+    secrets: {}
+    #  secret-name:
+    #    cloud: |
+    #      [default]
+    #      aws_access_key_id = 
+    #      aws_secret_access_key =
