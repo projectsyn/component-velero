@@ -6,7 +6,7 @@ parameters:
       velero: 2.23.3
     helm_values:
       configuration:
-        provider: aws
+        provider: ${facts:cloud}
 
     schedules: []
     # - name: full-backup
