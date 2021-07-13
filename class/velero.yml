@@ -15,7 +15,7 @@ parameters:
           - velero/component/main.jsonnet
         input_type: jsonnet
         output_path: velero/
-      - input_type: helm  
+      - input_type: helm
         input_paths:
           - velero/helmcharts/velero/${velero:charts:velero}/
         helm_values: ${velero:helm_values}
