@@ -5,7 +5,7 @@ parameters:
         source: https://vmware-tanzu.github.io/helm-charts
         chart_name: velero
         version: ${velero:charts:velero}
-        output_path: dependencies/velero/helmcharts/velero
+        output_path: dependencies/velero/helmcharts/velero/${velero:charts:velero}/
     compile:
       - input_paths:
           - velero/component/app.jsonnet
@@ -17,7 +17,7 @@ parameters:
         output_path: velero/
       - input_type: helm  
         input_paths:
-          - velero/helmcharts/velero
+          - velero/helmcharts/velero/${velero:charts:velero}/
         helm_values: ${velero:helm_values}
         helm_params:
           release_name: ${_instance}
