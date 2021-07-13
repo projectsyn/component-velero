@@ -8,13 +8,13 @@ local params = inv.parameters.velero;
 // Define outputs below
 {
   ['volumeSnapshotlocation-' + volumeSnapshotlocation.name]: {
-      apiVersion: 'velero.io/v1',
-      kind: 'VolumeSnapshotLocation',
-      metadata: {
-        name: volumeSnapshotlocation.name,
-        namespace: params.namespace,
-      },
-      spec: volumeSnapshotlocation.spec
+    apiVersion: 'velero.io/v1',
+    kind: 'VolumeSnapshotLocation',
+    metadata: {
+      name: volumeSnapshotlocation.name,
+      namespace: params.namespace,
+    },
+    spec: volumeSnapshotlocation.spec,
   }
   for volumeSnapshotlocation in params.volumesnapshotlocations
 }

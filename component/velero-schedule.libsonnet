@@ -8,13 +8,13 @@ local params = inv.parameters.velero;
 // Define outputs below
 {
   ['schedule-' + schedule.name]: {
-      apiVersion: 'velero.io/v1',
-      kind: 'Schedule',
-      metadata: {
-        name: schedule.name,
-        namespace: params.namespace,
-      },
-      spec: schedule.spec
+    apiVersion: 'velero.io/v1',
+    kind: 'Schedule',
+    metadata: {
+      name: schedule.name,
+      namespace: params.namespace,
+    },
+    spec: schedule.spec,
   }
   for schedule in params.schedules
 }

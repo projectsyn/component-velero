@@ -7,17 +7,17 @@ local params = inv.parameters.velero;
 
 
 local backupstoragelocationSecret(secret) = kube.Secret(secret) {
-    metadata+: {
-        namespace: params.namespace,
-    },
-    stringData+: {
-        [secretData]: params.secrets[secret][secretData]
-        for secretData in std.objectFields(params.secrets[secret])
-    },
+  metadata+: {
+    namespace: params.namespace,
+  },
+  stringData+: {
+    [secretData]: params.secrets[secret][secretData]
+    for secretData in std.objectFields(params.secrets[secret])
+  },
 };
 
 // Define outputs below
 {
-    ['backupstoragelocation-secret-' + secret]: backupstoragelocationSecret(secret)
-    for secret in std.objectFields(params.secrets)
+  ['backupstoragelocation-secret-' + secret]: backupstoragelocationSecret(secret)
+  for secret in std.objectFields(params.secrets)
 }

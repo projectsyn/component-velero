@@ -8,13 +8,13 @@ local params = inv.parameters.velero;
 // Define outputs below
 {
   ['backupstoragelocation-' + backupstoragelocation.name]: {
-      apiVersion: 'velero.io/v1',
-      kind: 'BackupStorageLocation',
-      metadata: {
-        name: backupstoragelocation.name,
-        namespace: params.namespace,
-      },
-      spec: backupstoragelocation.spec
+    apiVersion: 'velero.io/v1',
+    kind: 'BackupStorageLocation',
+    metadata: {
+      name: backupstoragelocation.name,
+      namespace: params.namespace,
+    },
+    spec: backupstoragelocation.spec,
   }
   for backupstoragelocation in params.backupstoragelocations
 }
