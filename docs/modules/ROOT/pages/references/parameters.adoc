@@ -48,7 +48,7 @@ Velero [VolumeSnapshotLocation](https://velero.io/docs/main/api-types/volumesnap
 type:: dict
 default:: []`
 
-Additional Secrets to deploy used by a Storage Provider Plugin (e.g. aws)
+Additional Secrets to deploy used by a Storage Provider Plugin (for example aws)
 
 == Example for aws Provider
 
