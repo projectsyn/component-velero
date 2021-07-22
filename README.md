@@ -2,6 +2,8 @@
 
 This is a [Commodore][commodore] Component for velero.
 
+This component is not supported by VSHN. We recommend using [k8up](https://github.com/vshn/k8up) with the [backup-k8up Component](https://github.com/projectsyn/component-backup-k8up) instead.
+
 This repository is part of Project Syn.
 For documentation on Project Syn and this component, see https://syn.tools.
 
