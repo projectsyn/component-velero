@@ -24,7 +24,7 @@ All helm_values are passed to the helm chart.
 type:: dict
 default:: []`
 
-Velero [Schedules](https://velero.io/docs/main/api-types/schedule/) to deploy. The array contains an object with the name and the `spec` section for the Schedule
+Velero [Schedules](https://velero.io/docs/main/api-types/schedule/) to deploy. The array contains an object with the `name` and the `spec` section for the Schedule
 
 == `backupstoragelocations`
 
@@ -32,7 +32,7 @@ Velero [Schedules](https://velero.io/docs/main/api-types/schedule/) to deploy. T
 type:: dict
 default:: []`
 
-Velero [BackupStorageLocation](https://velero.io/docs/main/api-types/backupstoragelocation/) to deploy. The array contains an object with the name and the `spec` section for the BackupStorageLocation
+Velero [BackupStorageLocation](https://velero.io/docs/main/api-types/backupstoragelocation/) to deploy. The array contains an object with the `name` and the `spec` section for the BackupStorageLocation
 
 == `volumesnapshotlocations`
 
@@ -40,7 +40,7 @@ Velero [BackupStorageLocation](https://velero.io/docs/main/api-types/backupstora
 type:: dict
 default:: []`
 
-Velero [VolumeSnapshotLocation](https://velero.io/docs/main/api-types/volumesnapshotlocation/) to deploy. The array contains an object with the name and the `spec` section for the VolumeSnapshotLocation
+Velero [VolumeSnapshotLocation](https://velero.io/docs/main/api-types/volumesnapshotlocation/) to deploy. The array contains an object with the `name` and the `spec` section for the VolumeSnapshotLocation
 
 == `secrets`
 
