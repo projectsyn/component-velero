@@ -59,13 +59,13 @@ helm_values:
   configuration:
     provider: aws
 
-schedules: 
+schedules:
 - name: full-backup
   spec:
     schedule: '0 7 * * *'
     ttl: 24h0m0s
 
-backupstoragelocations: 
+backupstoragelocations:
 - name: default
   spec:
     provider: aws
@@ -78,7 +78,7 @@ backupstoragelocations:
       region: 'us-west-2'
       profile: 'default'
 
-volumesnapshotlocations: 
+volumesnapshotlocations:
   - name: default
     spec:
       provider: aws

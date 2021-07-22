@@ -12,7 +12,7 @@ See https://github.com/vmware-tanzu/velero-plugin-for-aws#setup and https://gith
 
 [source,yaml]
 ----
-backupstoragelocations: 
+backupstoragelocations:
 - name: default
   spec:
     provider: aws
@@ -25,7 +25,7 @@ backupstoragelocations:
       region: 'us-west-2'
       profile: 'default'
 
-volumesnapshotlocations: 
+volumesnapshotlocations:
   - name: default
     spec:
       provider: aws
@@ -42,12 +42,11 @@ secrets:
 
 ----
 
-
 3. Configure your Schedules
 
 [source,yaml]
 ----
-schedules: 
+schedules:
 - name: full-backup
   spec:
     schedule: '0 7 * * *'
