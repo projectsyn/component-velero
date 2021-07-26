@@ -12,33 +12,35 @@ See https://github.com/vmware-tanzu/velero-plugin-for-aws#setup and https://gith
 
 [source,yaml]
 ----
-backupstoragelocations:
-- name: default
-  spec:
-    provider: aws
-    objectStorage:
-      bucket: myBucket
-    credential:
-      name: aws
-      key: cloud
-    config:
-      region: 'us-west-2'
-      profile: 'default'
+parameters:
+  velero:
+    backupstoragelocations:
+    - name: default
+      spec:
+        provider: aws
+        objectStorage:
+          bucket: myBucket
+        credential:
+          name: aws
+          key: cloud
+        config:
+          region: 'us-west-2'
+          profile: 'default'
 
-volumesnapshotlocations:
-  - name: default
-    spec:
-      provider: aws
-      config:
-        region: 'us-west-2'
-        profile: 'default'
+    volumesnapshotlocations:
+      - name: default
+        spec:
+          provider: aws
+          config:
+            region: 'us-west-2'
+            profile: 'default'
 
-secrets:
-  aws:
-    cloud: |
-        [default]
-        aws_access_key_id =
-        aws_secret_access_key =
+    secrets:
+      aws:
+        cloud: |
+            [default]
+            aws_access_key_id =
+            aws_secret_access_key =
 
 ----
 
@@ -46,9 +48,11 @@ secrets:
 
 [source,yaml]
 ----
-schedules:
-- name: full-backup
-  spec:
-    schedule: '0 7 * * *'
-    ttl: 24h0m0s
+parameters:
+  velero:
+    schedules:
+    - name: full-backup
+      spec:
+        schedule: '0 7 * * *'
+        ttl: 24h0m0s
 ----
