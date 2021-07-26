@@ -1,2 +1,7 @@
 * xref:index.adoc[Home]
+
+.How-to guides
+* xref:how-tos/aws.adoc[Provider AWS]
+
+.Technical reference
 * xref:references/parameters.adoc[Parameters]
