@@ -1,0 +1,58 @@
+= Provider AWS
+
+This guide covers how to use the AWS storage provider provider.
+
+== Use AWS Storage Provider
+
+See https://github.com/vmware-tanzu/velero-plugin-for-aws#setup and https://github.com/vmware-tanzu/velero-plugin-for-aws for more details on the AWS Plugin.
+
+. Set `helm_values.configuration.provicer` parameter to `aws`.
+
+. Add your BackupStorageLocations, VolumeSnapshotLocation and the required Secrets.
+
+[source,yaml]
+----
+parameters:
+  velero:
+    backupstoragelocations:
+    - name: default
+      spec:
+        provider: aws
+        objectStorage:
+          bucket: myBucket
+        credential:
+          name: aws
+          key: cloud
+        config:
+          region: 'us-west-2'
+          profile: 'default'
+
+    volumesnapshotlocations:
+      - name: default
+        spec:
+          provider: aws
+          config:
+            region: 'us-west-2'
+            profile: 'default'
+
+    secrets:
+      aws:
+        cloud: |
+            [default]
+            aws_access_key_id =
+            aws_secret_access_key =
+
+----
+
+. Configure your Schedules
+
+[source,yaml]
+----
+parameters:
+  velero:
+    schedules:
+    - name: full-backup
+      spec:
+        schedule: '0 7 * * *'
+        ttl: 24h0m0s
+----
