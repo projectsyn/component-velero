@@ -24,7 +24,8 @@ All helm_values are passed to the helm chart.
 type:: dict
 default:: []`
 
-Velero [Schedules](https://velero.io/docs/main/api-types/schedule/) to deploy. The array contains an object with the `name` and the `spec` section for the Schedule
+See Velero [Schedules](https://velero.io/docs/main/api-types/schedule/) to deploy.
+The array contains an object with the `name` and the `spec` section for the Schedule.
 
 == `backupstoragelocations`
 
@@ -32,7 +33,8 @@ Velero [Schedules](https://velero.io/docs/main/api-types/schedule/) to deploy. T
 type:: dict
 default:: []`
 
-Velero [BackupStorageLocation](https://velero.io/docs/main/api-types/backupstoragelocation/) to deploy. The array contains an object with the `name` and the `spec` section for the BackupStorageLocation
+See Velero [BackupStorageLocation](https://velero.io/docs/main/api-types/backupstoragelocation/) to deploy.
+The array contains an object with the `name` and the `spec` section for the BackupStorageLocation.
 
 == `volumesnapshotlocations`
 
@@ -40,7 +42,8 @@ Velero [BackupStorageLocation](https://velero.io/docs/main/api-types/backupstora
 type:: dict
 default:: []`
 
-Velero [VolumeSnapshotLocation](https://velero.io/docs/main/api-types/volumesnapshotlocation/) to deploy. The array contains an object with the `name` and the `spec` section for the VolumeSnapshotLocation
+See Velero [VolumeSnapshotLocation](https://velero.io/docs/main/api-types/volumesnapshotlocation/) to deploy.
+The array contains an object with the `name` and the `spec` section for the VolumeSnapshotLocation.
 
 == `secrets`
 
@@ -48,49 +51,48 @@ Velero [VolumeSnapshotLocation](https://velero.io/docs/main/api-types/volumesnap
 type:: dict
 default:: []`
 
-Additional Secrets to deploy used by a Storage Provider Plugin (for example aws)
+Additional Secrets to deploy used by a Storage Provider Plugin (for example aws).
 
 == Example for aws Provider
 
 [source,yaml]
 ----
-namespace: example-namespace
-helm_values:
-  configuration:
-    provider: aws
+parameters:
+  velero:
+    helm_values:
+      configuration:
+        provider: aws
 
-schedules:
-- name: full-backup
-  spec:
-    schedule: '0 7 * * *'
-    ttl: 24h0m0s
+    schedules:
+    - name: full-backup
+      spec:
+        schedule: '0 7 * * *'
+        ttl: 24h0m0s
 
-backupstoragelocations:
-- name: default
-  spec:
-    provider: aws
-    objectStorage:
-      bucket: myBucket
-    credential:
-      name: aws
-      key: cloud
-    config:
-      region: 'us-west-2'
-      profile: 'default'
+    backupstoragelocations:
+    - name: default
+      spec:
+        provider: aws
+        objectStorage:
+          bucket: myBucket
+        credential:
+          name: aws
+          key: cloud
+        config:
+          region: 'us-west-2'
+          profile: 'default'
 
-volumesnapshotlocations:
-  - name: default
-    spec:
-      provider: aws
-      config:
-        region: 'us-west-2'
-        profile: 'default'
+    volumesnapshotlocations:
+      - name: default
+        spec:
+          provider: aws
+          config:
+            region: 'us-west-2'
+            profile: 'default'
 
-secrets:
-  aws:
-    cloud: |
-        [default]
-        aws_access_key_id =
-        aws_secret_access_key =
-
+    secrets:
+      aws:
+        cloud: |
+            [default]
+            aws_access_key_id =
 ----
