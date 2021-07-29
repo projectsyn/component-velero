@@ -7,6 +7,8 @@ parameters:
     helm_values:
       configuration:
         provider: ${facts:cloud}
+      backupsEnabled: false # we create them using the syn component and not the helm chart
+      snapshotsEnabled: false # we create them using the syn component and not the helm chart
 
     schedules: []
 
