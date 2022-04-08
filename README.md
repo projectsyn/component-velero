@@ -1,3 +1,7 @@
+# ⚠️ Repo Archive Notice
+
+As of Apr 8, 2022, this component will no longer be updated.
+
 # Commodore Component: velero
 
 This is a [Commodore][commodore] Component for velero.
